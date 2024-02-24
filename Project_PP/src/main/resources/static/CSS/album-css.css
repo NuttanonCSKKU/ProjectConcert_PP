@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* Reset CSS */
+ main {
+            background-color: #fff;
+            padding: 20px;
+        }
+
+table {
+	
+    width: 20%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Style the table header */
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+th {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style table rows */
+tbody .artist {
+    border-bottom: 1px solid #ccc;
+}
+
+/* Style artist name cell */
+td:nth-child(1) {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Style description cell */
+td:nth-child(2) {
+    font-style: italic;
+}
+
+/* Style album names cell */
+td:nth-child(3) {
+    font-weight: bold;
+}
+
+/* Style image cell */
+td:nth-child(4) img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+/* Style the "Delete" button cell */
+td:nth-child(5) button {
+    background-color: #ff3333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* Add spacing between rows on hover */
+tbody .artist:hover {
+    background-color: #f5f5f5;
+}

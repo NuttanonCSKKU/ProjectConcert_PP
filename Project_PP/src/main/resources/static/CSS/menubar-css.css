@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@font-face{
+	font-family: valoon;
+	src: url(Valoon.ttf);
+}
+/* Add your custom CSS styles here */
+        .navbar {
+            background-color: #000; /* Background color */
+            padding: 15px 0; /* Padding for the navbar */
+            color: #fff; /* Text color */
+        }
+
+        .navbar a {
+            color: #fff; /* Link text color */
+            transition: color 0.3s; /* Transition effect for color change */
+        }
+
+        .navbar a:hover {
+            color: #ff69b4; /* Pink color on hover */
+        }
+
+        /* Customize the active link */
+        .navbar .active a {
+            color: #ff0000; /* Red color for active link */
+        }
+
+        /* Customize the brand/logo */
+        .navbar-brand {
+            font-size: 24px; /* Adjust font size */
+            
+        }
+     
+	
+		p {
+		  text-align: center;
+		  padding-top: 2em;
+		  color: grey;
+		}
+		p a {
+		  color: #e1e1e1;
+		  text-decoration: none;
+		}
+		p a:hover {
+		  color: #fff;
+		}

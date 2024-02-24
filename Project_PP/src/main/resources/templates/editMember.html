@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แก้ไขสมาชิก</title>
+</head>
+<body>
+    <h1>แก้ไขสมาชิก</h1>
+    <form action="#" th:action="@{/edit/{memberId}(memberId=${member.idmember})}" method="post" th:object="${member}" enctype="multipart/form-data">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="name">ชื่อ:</label>
+        <input type="text" id="name" name="name" th:value="${member.name}" required>
+        <label for="number">number:</label>
+        <input type="text" id="number" name="number" th:value="${member.number}" required>
+        
+        <label for="telephone">telephone:</label>
+        <input type="text" id="telephone" name="telephone" th:value="${member.telephone}" required>
+        
+        <label for="email">email:</label>
+        <input type="text" id="email" name="email" th:value="${member.email}" required>
+        
+        <label for="zipcode">zipcode:</label>
+        <input type="text" id="zipcode" name="zipcode" th:value="${member.address.zipcode}" required>
+        
+        <label for="address_line1">address_line1:</label>
+        <input type="text" id="address_line1" name="address_line1" th:value="${member.address.address_line1}" required>
+       
+        <button type="submit">บันทึกการแก้ไข</button>
+    </form>
+    <a href="/">ย้อนกลับ</a>
+</body>
+</html>

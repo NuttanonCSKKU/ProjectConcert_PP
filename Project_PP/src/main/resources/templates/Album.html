@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Album</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="CSS/menubar-css.css">
+    <link rel="stylesheet" type="text/css" href="CSS/album-css.css">
+</head>
+<body>
+    <div th:insert="~{menubar::menubar}"></div>
+    <main style="background: rgb(255, 128, 128);">
+        <section class="py-5">
+            <div class="container px-5 mb-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">ALBUM</span></h1>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-11 col-xl-9 col-xxl-8" style="width: 70vh;">
+                        <table>
+                            <thead>
+                                <tr>
+                                     <th style="width: 250%;">ชื่อ</th>
+            						 <th style="width: 350%;">อัลบั้ม</th>
+                                </tr>
+                            </thead>
+                            <tbody style=" background-color: rgb(192, 192, 192);" >
+                                <tr th:each="artist : ${artists}" class="artist">
+                                    <td th:text="${artist.name}" style="font-size: 36px; font-family: 'Bodoni Poster', Arial, sans-serif;"></td>
+                                    <td >
+                                        <ul th:if="${#lists.isEmpty(artist.albums)}" style="width: 20%;">
+                                            <li>ยังไม่มีผลงานอัลบั้ม</li>
+                                        </ul>
+                                        <ul th:if="${not #lists.isEmpty(artist.albums)}" style="width: 20%;">
+                                            <li th:each="album : ${artist.albums}">
+                                                <span th:text="${album.albumname}" style="width: 50px;"></span>
+                                                <form th:action="@{/album/deleteAlbum/{albumId}(albumId=${album.id_album})}" method="post" style="display: inline;">
+                                                    <input type="hidden" name="_method" value="DELETE" />
+                                                    <button type="submit" class="btn btn-danger" th:attr="data-album-name=${album.albumname}" onclick="return confirmDelete(this.getAttribute('data-album-name'));">ลบ</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                        <script src="script/alertdeleteAlbum.js"></script>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                   
+                    <form action="/createAlbum" method="POST" enctype="multipart/form-data">
+                        <label for="artist">เลือกศิลปิน:</label>
+                        <select id="artist" name="artist" required>
+                            <option value="">-- เลือกศิลปิน --</option>
+                            <th:block th:each="artist : ${artists}">
+                                <option th:value="${artist.id_artist}" th:text="${artist.name}"></option>
+                            </th:block>
+                        </select><br><br>
+                        <label for="name">ชื่ออัลบั้ม:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+                        <button type="submit">บันทึก</button>
+                    </form>
+                </div>
+            </div>
+       
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; ปี 2023 TEENOYCONCERT</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Link to Bootstrap CSS -->
+ <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Modern Business - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="CSS/button-create.css">
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" type="text/css" href="CSS/menubar-css.css">
+    <style>
+        .modal-content {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .modal-body {
+            border-radius: 40px;
+            padding: 0;
+        }
+        .btn-close {
+            position: absolute;
+            right: 0;
+            padding: 1em;
+        }
+        h1 {
+            font-size: 2.3em;
+            font-weight: bold;
+        }
+        
+        p {
+            text-align: center;
+            padding-top: 2em;
+            color: rgb(255, 255, 255);
+        }
+        p a {
+            color: #e1e1e1;
+            text-decoration: none;
+        }
+        p a:hover {
+            color: #fff;
+        }
+
+        #carouselAutoplaying {
+            margin: 0 auto;
+            text-align: center;
+             background-image: url('wallpaper.jpg');
+            background-size: cover; /* เลื่อนขนาดรูปพื้นหลังให้สำหรับองค์กรบทั้งหมด */
+            background-position: center; /* ตำแหน่งรูปพื้นหลังตรงกลาง */
+        }
+        .carousel-inner {
+            border: 2px solid #ff69b4; /* สไตล์และสีขอบ */
+            padding: 10px; /* การระยะห่างในขอบ */
+        }
+        .carousel-inner img {
+            border-radius: 10px; /* ปรับค่าเพื่อควบคุมความโค้งมนของมุม */
+        }
+        .enjoy-concert {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #ff69b4;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+      
+    </style>
+</head>
+<body>
+    <div th:insert="~{menubar::menubar}"></div>
+
+    <main>
+        <!-- Slides -->
+        <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel" style="background-color: black;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="con1.png" alt="Feature 1">
+                    <div class="carousel-caption">
+                        <h3>Travisscott</h3>
+                        <p>สนุกกันได้ที่คอนเสิร์ตTravis</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="con2.png" alt="Feature 2">
+                    <div class = "carousel-caption">
+                        <h3>Young-Q</h3>
+                        <p>รับชมคอนเสิร์ตสดจาก Young-Q</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="con3.png" alt="Feature 3">
+                    <div class="carousel-caption">
+                        <h3>POST MALONE</h3>
+                        <p>รับชมคอนเสิร์ตสดจาก POST MALONE</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+
+        <div class="enjoy-concert" style="background-color: black;">
+            <h2>ขอให้ท่าน ENJOY CONCERT ของพวกเรา</h2>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer style="background-color: #ff69b4;">
+        <p>&copy; ปี 2023 TEENOYCONCERT</p>
+    </footer>
+</body>
+</html>
